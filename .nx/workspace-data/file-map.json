@@ -1,0 +1,610 @@
+{
+  "version": "6.0",
+  "nxVersion": "22.6.1",
+  "pathMappings": {
+    "@/*": [
+      "src/*"
+    ]
+  },
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "nonProjectFiles": [],
+    "projectFileMap": {
+      "inovatech-connect": [
+        {
+          "file": ".agent/workflows/beast-mode-v4.md",
+          "hash": "13345025200013172735"
+        },
+        {
+          "file": ".continue/mcpServers/new-mcp-server-1.yaml",
+          "hash": "4809097836192732274"
+        },
+        {
+          "file": ".continue/mcpServers/new-mcp-server-2.yaml",
+          "hash": "5838643117986517342"
+        },
+        {
+          "file": ".continue/mcpServers/new-mcp-server-3.yaml",
+          "hash": "4809097836192732274"
+        },
+        {
+          "file": ".continue/mcpServers/new-mcp-server.yaml",
+          "hash": "4809097836192732274"
+        },
+        {
+          "file": ".gitignore",
+          "hash": "7979116077983971201"
+        },
+        {
+          "file": ".runtime/client-dev.log",
+          "hash": "11833570146355713563"
+        },
+        {
+          "file": ".runtime/dev.err.log",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": ".runtime/dev.out.log",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": ".runtime/prisma-studio.log",
+          "hash": "11497833005166693847"
+        },
+        {
+          "file": ".runtime/server-dev.log",
+          "hash": "9664948773968812409"
+        },
+        {
+          "file": ".versavoiceai/config.json",
+          "hash": "15753941481085060538"
+        },
+        {
+          "file": ".versavoiceai/outbox.json",
+          "hash": "2345914305372226531"
+        },
+        {
+          "file": ".vscode/launch.json",
+          "hash": "762596909251514344"
+        },
+        {
+          "file": ".vscode/settings.json",
+          "hash": "6882929940809884526"
+        },
+        {
+          "file": ".windsurf/workflows/review.md",
+          "hash": "11495061077361887851"
+        },
+        {
+          "file": "CHECKPOINT_RETORNADA.md",
+          "hash": "10620353243173115825"
+        },
+        {
+          "file": "CONTEXTO_ATUAL.md",
+          "hash": "12488072386660312161"
+        },
+        {
+          "file": "EXPORT_GUIDE.md",
+          "hash": "9553348430018591597"
+        },
+        {
+          "file": "FLUXO_ANTILIMITE.md",
+          "hash": "5061961138920814150"
+        },
+        {
+          "file": "GATEWAY_SETUP.md",
+          "hash": "4498648336338101898"
+        },
+        {
+          "file": "INOVATECH_CONNECT/src/pages/UserManagement.jsx",
+          "hash": "6883902925658557741"
+        },
+        {
+          "file": "PAYMENT_GATEWAY_BEFORE_AFTER.md",
+          "hash": "14589518022217316001"
+        },
+        {
+          "file": "PAYMENT_GATEWAY_COMPLETE.md",
+          "hash": "8347668313129867115"
+        },
+        {
+          "file": "PAYMENT_GATEWAY_GUIDE.md",
+          "hash": "12405786387559174162"
+        },
+        {
+          "file": "PAYMENT_GATEWAY_QUICK_SUMMARY.md",
+          "hash": "10075181048022458699"
+        },
+        {
+          "file": "PAYMENT_GATEWAY_SUMMARY.md",
+          "hash": "18363631614627165193"
+        },
+        {
+          "file": "PAYMENT_GATEWAY_UI_LAYOUT.md",
+          "hash": "7356972023501856098"
+        },
+        {
+          "file": "PAYMENT_GATEWAY_UI_SUMMARY.md",
+          "hash": "2513849572369396849"
+        },
+        {
+          "file": "PROMPT_RETORNADA.md",
+          "hash": "11069524175334393071"
+        },
+        {
+          "file": "TESTING_DEPLOYMENT_GUIDE.md",
+          "hash": "4868686489196545677"
+        },
+        {
+          "file": "TODO-USERS.md",
+          "hash": "8593778822163464792"
+        },
+        {
+          "file": "TODO.md",
+          "hash": "8545905395927647419"
+        },
+        {
+          "file": "TODO_LOGIN_FIX.md",
+          "hash": "14125150866845912936"
+        },
+        {
+          "file": "Users/NITRO 5/Downloads/INOVATECH CONNECT/INOVATECH CONNECT/INOVATECH_CONNECT/src/pages/UserManagement.jsx",
+          "hash": "6883902925658557741"
+        },
+        {
+          "file": "Users/NITRO 5/Downloads/INOVATECH CONNECT/INOVATECH CONNECT/server/index.js",
+          "hash": "11754753165074027008"
+        },
+        {
+          "file": "apply-prod-key.js",
+          "hash": "1377956312234473179"
+        },
+        {
+          "file": "check-data.js",
+          "hash": "5166513284900730511"
+        },
+        {
+          "file": "check-db.js",
+          "hash": "10547806587960312808"
+        },
+        {
+          "file": "check-gateway.js",
+          "hash": "7034370294780555373"
+        },
+        {
+          "file": "check-master.js",
+          "hash": "4012980368632323226"
+        },
+        {
+          "file": "client_dev.log",
+          "hash": "4763187055175490050"
+        },
+        {
+          "file": "diag-simple.js",
+          "hash": "11561970766304392066"
+        },
+        {
+          "file": "diagnostic-charge.js",
+          "hash": "859729007298850576"
+        },
+        {
+          "file": "diagnostic.js",
+          "hash": "15443395472106922730"
+        },
+        {
+          "file": "diagnostic_output.txt",
+          "hash": "1770378163083845254"
+        },
+        {
+          "file": "dist/index.html",
+          "hash": "17510298474238153508"
+        },
+        {
+          "file": "dist/manifest.json",
+          "hash": "16012037168676907037"
+        },
+        {
+          "file": "dist/sw.js",
+          "hash": "11436366190597793058"
+        },
+        {
+          "file": "file.tmp",
+          "hash": "14553742997674387648"
+        },
+        {
+          "file": "index.html",
+          "hash": "6571636257304505105"
+        },
+        {
+          "file": "list-condos.js",
+          "hash": "6777923605182633713"
+        },
+        {
+          "file": "nodemon.json",
+          "hash": "6096369187262999149"
+        },
+        {
+          "file": "nx.json",
+          "hash": "18336426213955174907"
+        },
+        {
+          "file": "overview.json",
+          "hash": "1104108525571308689"
+        },
+        {
+          "file": "overview_architecture.puml",
+          "hash": "4220039800221460732"
+        },
+        {
+          "file": "package-lock.json",
+          "hash": "13875963115039407086"
+        },
+        {
+          "file": "package.json",
+          "hash": "12345791115784834990"
+        },
+        {
+          "file": "prisma/dev.db",
+          "hash": "16911598266441512428"
+        },
+        {
+          "file": "prisma/migrations/20260319174050_inovatechconnect/migration.sql",
+          "hash": "8049417351316941545"
+        },
+        {
+          "file": "prisma/migrations/20260321154207_inovatechconnect/migration.sql",
+          "hash": "6244623887320204124"
+        },
+        {
+          "file": "prisma/migrations/20260322021000_add_license_billing_customer_snapshot/migration.sql",
+          "hash": "15065636260841040644"
+        },
+        {
+          "file": "prisma/migrations/20260322133000_add_master_block_grace_days/migration.sql",
+          "hash": "8115571546796013502"
+        },
+        {
+          "file": "prisma/migrations/20260323010000_add_chat_realtime/migration.sql",
+          "hash": "16040283647708649273"
+        },
+        {
+          "file": "prisma/migrations/migration_lock.toml",
+          "hash": "10997593172930738585"
+        },
+        {
+          "file": "prisma/new_seed.js",
+          "hash": "2787555530196803430"
+        },
+        {
+          "file": "prisma/schema.prisma",
+          "hash": "16354670496417952604"
+        },
+        {
+          "file": "prisma/seed-inovatech.js",
+          "hash": "867061290695437893"
+        },
+        {
+          "file": "prisma/seed.js",
+          "hash": "5194732375819913081"
+        },
+        {
+          "file": "public/manifest.json",
+          "hash": "16012037168676907037"
+        },
+        {
+          "file": "public/sw.js",
+          "hash": "11436366190597793058"
+        },
+        {
+          "file": "restart.bat",
+          "hash": "13496655010586298902"
+        },
+        {
+          "file": "scripts/gerar-checkpoint.mjs",
+          "hash": "10091102758475807093"
+        },
+        {
+          "file": "server/data/app-state.json",
+          "hash": "15897903075622507821"
+        },
+        {
+          "file": "server/data/state.json",
+          "hash": "6302474762916679923"
+        },
+        {
+          "file": "server/data/state.json.bak",
+          "hash": "9990431842790438980"
+        },
+        {
+          "file": "server/gateway-integrations.js",
+          "hash": "1540362033669056371"
+        },
+        {
+          "file": "server/index.js",
+          "hash": "12563202589791834433"
+        },
+        {
+          "file": "server/middleware/auth.js",
+          "hash": "12904393195378579901"
+        },
+        {
+          "file": "server/routes/admin.js",
+          "hash": "14544572441305217015"
+        },
+        {
+          "file": "server/routes/auth.js",
+          "hash": "5681285829280867619"
+        },
+        {
+          "file": "server/routes/chat.js",
+          "hash": "13098401873804634111"
+        },
+        {
+          "file": "server/routes/condos.js",
+          "hash": "1473326126697221310"
+        },
+        {
+          "file": "server/routes/master-gateway.js",
+          "hash": "17622303088061895145"
+        },
+        {
+          "file": "server/routes/payments.js",
+          "hash": "17448821710375599996"
+        },
+        {
+          "file": "server/routes/sindico-gateway.js",
+          "hash": "14765060009587483155"
+        },
+        {
+          "file": "server/routes/state-complete.js",
+          "hash": "7042330435682509264"
+        },
+        {
+          "file": "server/routes/state.js",
+          "hash": "291462655784816300"
+        },
+        {
+          "file": "server/routes/uploads.js",
+          "hash": "5334415217665954023"
+        },
+        {
+          "file": "server/routes/users.js",
+          "hash": "8713629933065905716"
+        },
+        {
+          "file": "server/seed.js",
+          "hash": "7274115323049409968"
+        },
+        {
+          "file": "server/tsconfig.json",
+          "hash": "14229834479330129276"
+        },
+        {
+          "file": "server_dev.log",
+          "hash": "8095030684903788983"
+        },
+        {
+          "file": "server_error.log",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "src/ApiStatusPanel.tsx",
+          "hash": "6513812515082842633"
+        },
+        {
+          "file": "src/App.tsx",
+          "hash": "3111729114438762251"
+        },
+        {
+          "file": "src/ChatSystem.tsx",
+          "hash": "4226040753551519219"
+        },
+        {
+          "file": "src/GatewayConfig.tsx",
+          "hash": "155159199406086481"
+        },
+        {
+          "file": "src/GatewaySelectorForAdmin.tsx",
+          "hash": "8130725111078870234"
+        },
+        {
+          "file": "src/LandingPage.tsx",
+          "hash": "17249852335637669164"
+        },
+        {
+          "file": "src/LicensePayment.tsx",
+          "hash": "13783238494584897362"
+        },
+        {
+          "file": "src/Marketplace.tsx",
+          "hash": "11661766703113740330"
+        },
+        {
+          "file": "src/MissingFeatures.tsx",
+          "hash": "5504147787332431202"
+        },
+        {
+          "file": "src/NotificationSystem.tsx",
+          "hash": "6714991370773712856"
+        },
+        {
+          "file": "src/PaymentGatewayUI.tsx",
+          "hash": "9679494790936169666"
+        },
+        {
+          "file": "src/PaymentGatewayUIv2.tsx",
+          "hash": "11262423379941071202"
+        },
+        {
+          "file": "src/PixChargeGenerator.tsx",
+          "hash": "17682903776122698231"
+        },
+        {
+          "file": "src/PixConfig.tsx",
+          "hash": "15607856891570214123"
+        },
+        {
+          "file": "src/PushNotificationSystem.tsx",
+          "hash": "8253650502312861031"
+        },
+        {
+          "file": "src/QRScanner.tsx",
+          "hash": "13446771318310778968"
+        },
+        {
+          "file": "src/ReservationsModule.tsx",
+          "hash": "5333911350011961447"
+        },
+        {
+          "file": "src/SindicoGatewayUI.tsx",
+          "hash": "13763980116057400616"
+        },
+        {
+          "file": "src/SupportChat.tsx",
+          "hash": "12971974630338679218"
+        },
+        {
+          "file": "src/WhatsAppChat.tsx",
+          "hash": "15230054492816495331"
+        },
+        {
+          "file": "src/backendState.ts",
+          "hash": "9017602663084278876"
+        },
+        {
+          "file": "src/components/gateway/CreateChargeForm.tsx",
+          "hash": "13140079601478629631"
+        },
+        {
+          "file": "src/components/gateway/GatewayDashboard.tsx",
+          "hash": "14178962918562838637"
+        },
+        {
+          "file": "src/components/gateway/GatewaySettings.tsx",
+          "hash": "9627774372750178121"
+        },
+        {
+          "file": "src/components/gateway/GatewayTypes.ts",
+          "hash": "13446632724005470945"
+        },
+        {
+          "file": "src/components/gateway/PaymentHistory.tsx",
+          "hash": "16502021305099412992"
+        },
+        {
+          "file": "src/db.ts",
+          "hash": "1273477487239569378"
+        },
+        {
+          "file": "src/index.css",
+          "hash": "3451316015556488451"
+        },
+        {
+          "file": "src/main.tsx",
+          "hash": "2721613027865799942"
+        },
+        {
+          "file": "src/pages/UserManagement.jsx",
+          "hash": "13979932094281865696"
+        },
+        {
+          "file": "src/store.ts",
+          "hash": "5548694905911287610"
+        },
+        {
+          "file": "src/types.ts",
+          "hash": "12221174265912525608"
+        },
+        {
+          "file": "src/utils/cn.ts",
+          "hash": "302961142249979891"
+        },
+        {
+          "file": "start.ps1",
+          "hash": "5252501675154720814"
+        },
+        {
+          "file": "test-api-login.js",
+          "hash": "13593901763069058785"
+        },
+        {
+          "file": "test-api.js",
+          "hash": "1787976587704497281"
+        },
+        {
+          "file": "test-final.js",
+          "hash": "17221224739906078244"
+        },
+        {
+          "file": "test-gateways.js",
+          "hash": "1725198559294989123"
+        },
+        {
+          "file": "test-ollama.js",
+          "hash": "5482753187096702970"
+        },
+        {
+          "file": "test-payment-gateway.js",
+          "hash": "9830338552270709655"
+        },
+        {
+          "file": "test-post-user.js",
+          "hash": "9112402965627795150"
+        },
+        {
+          "file": "test-prod-key.js",
+          "hash": "8983365656562736789"
+        },
+        {
+          "file": "test-webhook-handler.js",
+          "hash": "15215515944115269932"
+        },
+        {
+          "file": "ts-errors.txt",
+          "hash": "13660949135615794508"
+        },
+        {
+          "file": "ts-errors2.txt",
+          "hash": "18149837405749596566"
+        },
+        {
+          "file": "tsconfig.json",
+          "hash": "1661985129018453008"
+        },
+        {
+          "file": "tsconfig.node.json",
+          "hash": "7510253199478022963"
+        },
+        {
+          "file": "update-admin.js",
+          "hash": "5764390778028958459"
+        },
+        {
+          "file": "uploads/condos/cmn2ar8td00002ormhdr3nlvu/README.txt",
+          "hash": "12963557419113654452"
+        },
+        {
+          "file": "uploads/condos/cmn2ar9lw00032ormv2a62ifs/README.txt",
+          "hash": "11340594128164036102"
+        },
+        {
+          "file": "uploads/condos/cmn2ar9zf00062ormgc7wnag2/README.txt",
+          "hash": "17311143534362649081"
+        },
+        {
+          "file": "uploads/condos/cmn2atjob00004s0vvx7mc9sn/README.txt",
+          "hash": "16059190556462362279"
+        },
+        {
+          "file": "uploads/condos/cmn2ay76z00005wuz99lulp4u/README.txt",
+          "hash": "13283011584566196225"
+        },
+        {
+          "file": "vite.config.ts",
+          "hash": "11497227599903235641"
+        }
+      ]
+    }
+  },
+  "externalNodesHash": "12249806273424354017"
+}

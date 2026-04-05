@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">INOVATECH CONNECT</string>
+    <string name="title_activity_main">INOVATECH CONNECT</string>
+    <string name="package_name">com.inovatech.connect</string>
+    <string name="custom_url_scheme">com.inovatech.connect</string>
+</resources>

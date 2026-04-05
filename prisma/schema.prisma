@@ -1,0 +1,651 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id                  String               @id @default(cuid())
+  name                String
+  email               String               @unique
+  password            String
+  role                String
+  cpf                 String?
+  birthDate           String?
+  phone               String?
+  condoId             String?
+  unit                String?
+  createdAt           DateTime             @default(now())
+  active              Boolean              @default(true)
+  chatEnabled         Boolean              @default(true)
+  lastSeenAt          DateTime?
+  canViewCharges      Boolean?             @default(false)
+  announcements       Announcement[]
+  assembliesCreated   Assembly[]            @relation("AssemblyCreator")
+  assemblyVotes       AssemblyVote[]
+  chatMessages        ChatMessage[]
+  chatParticipants    ChatParticipant[]
+  createdChats        ChatConversation[]   @relation("ChatConversationCreator")
+  complaints          Complaint[]
+  documents           Document[]
+  invoices            Invoice[]
+  lostFoundReports    LostFound[]
+  maintenanceRequests MaintenanceRequest[]
+  marketItems         MarketItem[]
+  notifications       Notification[]
+  reservations        Reservation[]
+  assignedSupportTickets SupportTicket[]   @relation("SupportTicketAssignee")
+  supportMessages     SupportMessage[]
+  supportTicketMessages SupportTicketMessage[] @relation("SupportTicketMessageSender")
+  supportTicketsRequested SupportTicket[]  @relation("SupportTicketRequester")
+  condominium         Condominium?         @relation(fields: [condoId], references: [id])
+  votes               Vote[]
+}
+
+model Condominium {
+  id                  String               @id @default(cuid())
+  name                String
+  cnpj                String?              // Novo campo
+  email               String?              // Novo campo
+  phone               String?              // Novo campo
+  address             String
+  city                String
+  units               Int
+  residents           Int
+  sindico             String
+  sindicoId           String
+  active              Boolean              @default(true)
+  blocked             Boolean              @default(false)
+  monthlyRevenue      Float
+  pendingCharges      Float
+  licenseValue        Float
+  createdAt           DateTime             @default(now())
+  accessLogs          AccessLog[]
+  announcements       Announcement[]
+  assemblies          Assembly[]
+  commonAreas         CommonArea[]
+  complaints          Complaint[]
+  deliveries          Delivery[]
+  documents           Document[]
+  employees           Employee[]
+  invoices            Invoice[]
+  licenseCharges      LicenseCharge[]
+  lostFoundItems      LostFound[]
+  maintenanceRequests MaintenanceRequest[]
+  marketItems         MarketItem[]
+  payments            Payment[]
+  reservations        Reservation[]
+  chatConversations   ChatConversation[]
+  supportMessages     SupportMessage[]
+  supportTickets      SupportTicket[]
+  users               User[]
+  votes               Vote[]
+  gatewayConfigs      GatewayConfig[]
+  gatewayStatuses     GatewayStatus[]
+  licenseBillings     LicenseBilling[]
+}
+
+model Assembly {
+  id          String               @id @default(cuid())
+  condoId     String
+  createdById String
+  title       String
+  description String?
+  status      String               @default("draft") // draft | open | closed
+  startsAt    DateTime
+  endsAt      DateTime
+  createdAt   DateTime             @default(now())
+  updatedAt   DateTime             @updatedAt
+  condominium Condominium          @relation(fields: [condoId], references: [id], onDelete: Cascade)
+  creator     User                 @relation("AssemblyCreator", fields: [createdById], references: [id], onDelete: Cascade)
+  agendaItems AssemblyAgendaItem[]
+  votes       AssemblyVote[]
+
+  @@index([condoId, status])
+  @@index([startsAt, endsAt])
+}
+
+model AssemblyAgendaItem {
+  id          String         @id @default(cuid())
+  assemblyId  String
+  title       String
+  description String?
+  itemOrder   Int            @default(0)
+  quorumType  String         @default("simple") // simple | two_thirds | unanimity
+  status      String         @default("open") // open | closed
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+  assembly    Assembly       @relation(fields: [assemblyId], references: [id], onDelete: Cascade)
+  votes       AssemblyVote[]
+
+  @@index([assemblyId, itemOrder])
+}
+
+model AssemblyVote {
+  id         String             @id @default(cuid())
+  assemblyId String
+  itemId     String
+  userId     String
+  choice     String // yes | no | abstain
+  weight     Float              @default(1)
+  createdAt  DateTime           @default(now())
+  updatedAt  DateTime           @updatedAt
+  assembly   Assembly           @relation(fields: [assemblyId], references: [id], onDelete: Cascade)
+  item       AssemblyAgendaItem @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  user       User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([itemId, userId])
+  @@index([assemblyId])
+  @@index([userId])
+}
+
+model ChatConversation {
+  id           String            @id @default(cuid())
+  condoId      String
+  type         String            @default("direct") // direct | group
+  name         String?
+  createdById  String
+  createdAt    DateTime          @default(now())
+  updatedAt    DateTime          @updatedAt
+  condominium  Condominium       @relation(fields: [condoId], references: [id])
+  creator      User              @relation("ChatConversationCreator", fields: [createdById], references: [id])
+  participants ChatParticipant[]
+  messages     ChatMessage[]
+
+  @@index([condoId])
+  @@index([updatedAt])
+}
+
+model ChatParticipant {
+  id             String           @id @default(cuid())
+  conversationId String
+  userId         String
+  joinedAt       DateTime         @default(now())
+  lastReadAt     DateTime?
+  conversation   ChatConversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  user           User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([conversationId, userId])
+  @@index([userId])
+}
+
+model ChatMessage {
+  id             String           @id @default(cuid())
+  conversationId String
+  senderId       String
+  type           String           @default("text") // text | image | file | system
+  content        String
+  fileUrl        String?
+  fileName       String?
+  fileMime       String?
+  fileSize       Int?
+  deleted        Boolean          @default(false)
+  createdAt      DateTime         @default(now())
+  conversation   ChatConversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  sender         User             @relation(fields: [senderId], references: [id], onDelete: Cascade)
+
+  @@index([conversationId, createdAt])
+  @@index([senderId])
+}
+
+model Invoice {
+  id          String      @id @default(cuid())
+  condoId     String
+  userId      String
+  userName    String
+  unit        String
+  description String
+  amount      Float
+  dueDate     DateTime
+  status      String
+  paidAt      DateTime?
+  createdAt   DateTime    @default(now())
+  user        User        @relation(fields: [userId], references: [id])
+  condominium Condominium @relation(fields: [condoId], references: [id])
+}
+
+model Delivery {
+  id           String      @id @default(cuid())
+  condoId      String
+  unit         String
+  residentName String
+  sender       String
+  trackingCode String
+  description  String
+  arrivedAt    DateTime    @default(now())
+  deliveredAt  DateTime?
+  status       String
+  qrToken      String
+  notified     Boolean     @default(false)
+  condominium  Condominium @relation(fields: [condoId], references: [id])
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  userId    String
+  title     String
+  message   String
+  type      String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model Announcement {
+  id          String      @id @default(cuid())
+  condoId     String
+  title       String
+  content     String
+  authorId    String
+  authorName  String
+  priority    String
+  createdAt   DateTime    @default(now())
+  user        User        @relation(fields: [authorId], references: [id])
+  condominium Condominium @relation(fields: [condoId], references: [id])
+}
+
+model CommonArea {
+  id                          String        @id @default(cuid())
+  condoId                     String
+  name                        String
+  capacity                    Int
+  maxHours                    Int
+  pricePerHour                Float
+  description                 String
+  rules                       String
+  image                       String
+  cancellationFinePercent     Int
+  cancellationFineWindowHours Int
+  condominium                 Condominium   @relation(fields: [condoId], references: [id])
+  reservations                Reservation[]
+}
+
+model Reservation {
+  id          String      @id @default(cuid())
+  condoId     String
+  areaId      String
+  areaName    String
+  userId      String
+  userName    String
+  unit        String
+  date        String
+  startTime   String
+  endTime     String
+  totalCost   Float
+  status      String
+  createdAt   DateTime    @default(now())
+  user        User        @relation(fields: [userId], references: [id])
+  commonArea  CommonArea  @relation(fields: [areaId], references: [id])
+  condominium Condominium @relation(fields: [condoId], references: [id])
+}
+
+model Vote {
+  id          String      @id @default(cuid())
+  condoId     String
+  title       String
+  description String
+  options     String
+  createdBy   String
+  endDate     DateTime
+  status      String
+  createdAt   DateTime    @default(now())
+  user        User        @relation(fields: [createdBy], references: [id])
+  condominium Condominium @relation(fields: [condoId], references: [id])
+}
+
+model Complaint {
+  id          String      @id @default(cuid())
+  condoId     String
+  category    String
+  description String
+  location    String
+  urgency     String
+  status      String
+  anonymous   Boolean     @default(false)
+  createdAt   DateTime    @default(now())
+  reporterId  String?
+  user        User?       @relation(fields: [reporterId], references: [id])
+  condominium Condominium @relation(fields: [condoId], references: [id])
+}
+
+model MarketItem {
+  id          String      @id @default(cuid())
+  condoId     String
+  sellerId    String
+  sellerName  String
+  unit        String
+  title       String
+  description String
+  price       Float
+  category    String
+  status      String
+  createdAt   DateTime    @default(now())
+  user        User        @relation(fields: [sellerId], references: [id])
+  condominium Condominium @relation(fields: [condoId], references: [id])
+}
+
+model Document {
+  id             String      @id @default(cuid())
+  condoId        String
+  title          String
+  category       String
+  description    String
+  fileType       String
+  fileSize       String
+  uploadedBy     String
+  uploadedByName String
+  createdAt      DateTime    @default(now())
+  version        String
+  tags           String
+  user           User        @relation(fields: [uploadedBy], references: [id])
+  condominium    Condominium @relation(fields: [condoId], references: [id])
+}
+
+model MaintenanceRequest {
+  id          String      @id @default(cuid())
+  condoId     String
+  userId      String
+  title       String
+  description String
+  location    String
+  priority    String
+  status      String
+  category    String
+  assignedTo  String?
+  photos      String
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  user        User        @relation(fields: [userId], references: [id])
+  condominium Condominium @relation(fields: [condoId], references: [id])
+}
+
+model AccessLog {
+  id           String      @id @default(cuid())
+  condoId      String
+  type         String
+  name         String
+  document     String
+  destination  String
+  purpose      String
+  company      String?
+  enteredAt    DateTime
+  exitedAt     DateTime?
+  authorizedBy String
+  status       String
+  condominium  Condominium @relation(fields: [condoId], references: [id])
+}
+
+model LostFound {
+  id             String      @id @default(cuid())
+  condoId        String
+  type           String
+  title          String
+  description    String
+  location       String
+  category       String
+  reportedBy     String
+  reportedByName String
+  contactPhone   String?
+  status         String
+  createdAt      DateTime    @default(now())
+  user           User        @relation(fields: [reportedBy], references: [id])
+  condominium    Condominium @relation(fields: [condoId], references: [id])
+}
+
+model SupportMessage {
+  id          String      @id @default(cuid())
+  condoId     String
+  userId      String
+  subject     String
+  message     String
+  priority    String
+  status      String
+  assignedTo  String?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  user        User        @relation(fields: [userId], references: [id])
+  condominium Condominium @relation(fields: [condoId], references: [id])
+}
+
+model SupportTicket {
+  id                  String                 @id @default(cuid())
+  protocol            String                 @unique
+  condoId             String?
+  requesterId         String
+  assignedAdminId     String?
+  subject             String
+  category            String
+  priority            String                 @default("medium") // low | medium | high | urgent
+  status              String                 @default("open") // open | in_progress | waiting_user | resolved | closed
+  source              String                 @default("portal")
+  description         String
+  requesterLastReadAt DateTime?
+  adminLastReadAt     DateTime?
+  firstResponseAt     DateTime?
+  lastMessageAt       DateTime               @default(now())
+  resolvedAt          DateTime?
+  closedAt            DateTime?
+  createdAt           DateTime               @default(now())
+  updatedAt           DateTime               @updatedAt
+  assignedAdmin       User?                  @relation("SupportTicketAssignee", fields: [assignedAdminId], references: [id])
+  condominium         Condominium?           @relation(fields: [condoId], references: [id])
+  requester           User                   @relation("SupportTicketRequester", fields: [requesterId], references: [id], onDelete: Cascade)
+  messages            SupportTicketMessage[]
+
+  @@index([requesterId, status])
+  @@index([assignedAdminId, status])
+  @@index([condoId, status])
+  @@index([updatedAt])
+}
+
+model SupportTicketMessage {
+  id                 String        @id @default(cuid())
+  ticketId           String
+  senderId           String
+  senderRoleSnapshot String
+  senderNameSnapshot String
+  message            String
+  isInternal         Boolean       @default(false)
+  attachmentUrl      String?
+  attachmentName     String?
+  attachmentMime     String?
+  attachmentSize     Int?
+  createdAt          DateTime      @default(now())
+  sender             User          @relation("SupportTicketMessageSender", fields: [senderId], references: [id], onDelete: Cascade)
+  ticket             SupportTicket @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+
+  @@index([ticketId, createdAt])
+  @@index([senderId])
+}
+
+model LicenseCharge {
+  id              String      @id @default(cuid())
+  condoId         String
+  condoName       String
+  description     String
+  amount          Float
+  dueDate         DateTime
+  status          String
+  paidAt          DateTime?
+  viewedBySindico Boolean     @default(false)
+  viewedAt        DateTime?
+  createdAt       DateTime    @default(now())
+  reference       String
+  condominium     Condominium @relation(fields: [condoId], references: [id])
+}
+
+model Employee {
+  id            String      @id @default(cuid())
+  condoId       String
+  name          String
+  cpf           String
+  birthDate     String
+  phone         String
+  email         String?
+  role          String
+  department    String
+  admissionDate String
+  salary        Float
+  address       String
+  notes         String?
+  document      String
+  createdAt     DateTime    @default(now())
+  condominium   Condominium @relation(fields: [condoId], references: [id])
+}
+
+model Payment {
+  id                String      @id @default(cuid())
+  condoId           String
+  invoiceId         String?     // Referência para cobrança/fatua
+  amount            Float
+  description       String
+  status            String      @default("pending")  // pending | processing | paid | failed | cancelled
+  method            String      @default("pix")      // pix | boleto | credit_card
+  
+  // Dados do pagador
+  customerName      String
+  customerEmail     String
+  customerCpf       String
+  
+  // Integração com gateway
+  gatewayProvider   String      // asaas | mercadopago | stripe
+  gatewayChargeId   String?     // ID da cobrança no gateway
+  gatewayStatus     String?     // Status retornado pelo gateway
+  pixCode           String?     // Código Pix para cópia/cola
+  qrCodeImage       String?     // URL da imagem do QR Code
+  boletoUrl         String?     // URL do boleto
+  
+  // Webhook e confirmação
+  webhookReceived   Boolean     @default(false)
+  paidAt            DateTime?
+  paymentProof      String?     // Comprovante de pagamento
+  
+  createdAt         DateTime    @default(now())
+  updatedAt         DateTime    @updatedAt
+  
+  condominium       Condominium @relation(fields: [condoId], references: [id])
+  
+  @@index([condoId])
+  @@index([gatewayChargeId])
+  @@index([status])
+}
+
+model GatewayConfig {
+  id              String      @id @default(cuid())
+  condominiumId   String
+  name            String
+  provider        String
+  credentials     String      // Encrypted in production
+  webhookSecret   String?
+  environment     String      @default("sandbox")
+  isActive        Boolean     @default(true)
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  @@unique([provider, condominiumId])
+  @@map("gateway_configs")
+  
+  condominium     Condominium @relation(fields: [condominiumId], references: [id])
+}
+
+model GatewayStatus {
+  id                    String      @id @default(cuid())
+  condominiumId         String
+  provider              String
+
+  // Status de conexão
+  isConnected           Boolean     @default(false)
+  lastHealthCheck       DateTime?
+  lastSuccessfulRequest DateTime?
+  consecutiveFailures   Int         @default(0)
+
+  // Tráfego
+  requestsSent          Int         @default(0)      // Total requisições enviadas
+  requestsReceived      Int         @default(0)      // Webhooks recebidos
+  successfulRequests    Int         @default(0)      // Requisições bem-sucedidas
+  failedRequests        Int         @default(0)      // Requisições falhadas
+
+  // Performance
+  averageResponseTime   Float       @default(0)      // ms
+
+  // Erros
+  lastError             String?
+  lastErrorAt           DateTime?
+
+  createdAt             DateTime    @default(now())
+  updatedAt             DateTime    @updatedAt
+
+  @@unique([provider, condominiumId])
+  condominium           Condominium @relation(fields: [condominiumId], references: [id])
+}
+
+model MasterGatewayConfig {
+  id              String      @id @default(cuid())
+  name            String      @default("Master Gateway")
+  provider        String      // asaas | mercadopago | stripe
+  credentials     String      // Encrypted in production
+  webhookSecret   String?
+  environment     String      @default("sandbox")  // sandbox | production
+  isActive        Boolean     @default(true)
+
+  // Configuração de quais condomínios este gateway cobre
+  // Se NULL, cobre todos (configuração master)
+  // Se preenchido, cobre apenas condomínios específicos
+  coverageType    String      @default("all")  // "all" | "specific"
+  coveredCondos   String?     // JSON array of condo IDs se coverageType = "specific"
+
+  // Configurações de assinatura
+  defaultLicenseValue Float   @default(299.00)  // Valor padrão da licença
+  billingDay         Int      @default(5)       // Dia do mês para cobrança (1-28)
+  blockGraceDays     Int      @default(30)      // Dias apos vencimento para bloquear condo
+  autoGenerateBillings Boolean @default(true)   // Gera a cobranca mensal automaticamente
+  recurrenceDay      Int      @default(25)      // Dia do mes para gerar a competencia
+  autoIssueCharges   Boolean  @default(false)   // Emite a cobranca no gateway apos gerar
+  autoIssueMethod    String   @default("boleto") // pix | boleto
+  lastRecurringRunMonth String?
+  lastRecurringRunAt DateTime?
+
+  // Metadados
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+  lastHealthCheck DateTime?
+  lastSuccessfulCharge DateTime?
+
+  @@map("master_gateway_configs")
+}
+
+model LicenseBilling {
+  id              String      @id @default(cuid())
+  condoId         String
+  masterGatewayId String?     // Qual gateway master cobrou (opcional)
+  description     String
+  amount          Float
+  dueDate         DateTime
+  billingMonth    String      // "2024-11" formato YYYY-MM
+  status          String      @default("pending") // pending | processing | paid | failed | overdue
+  paidAt          DateTime?
+  createdAt       DateTime    @default(now())
+
+  // Snapshot do cliente no momento da geração da cobrança
+  customerName    String?
+  customerEmail   String?
+  customerCnpj    String?
+  customerAddress String?
+  customerCity    String?
+  customerUnits   Int?
+
+  // Dados do gateway
+  gatewayProvider String?
+  gatewayChargeId String?
+  gatewayStatus   String?
+
+  // Relacionamentos
+  condominium     Condominium @relation(fields: [condoId], references: [id])
+
+  @@index([condoId, billingMonth])
+  @@index([status])
+  @@map("license_billings")
+}
