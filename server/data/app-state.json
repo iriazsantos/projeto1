@@ -1,0 +1,5 @@
+{
+  "core": {
+    "users": [
+      {"id":"u1","name":"Admin Master","email":"admin@inovatech.com","password":"123456","role":"admin","createdAt":"2024-11-07T00:00:00.000Z","active":true},
+      {"

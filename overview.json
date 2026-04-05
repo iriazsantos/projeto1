@@ -1,0 +1,891 @@
+{
+  "rootFolder": "c:\\Users\\NITRO 5\\Downloads\\INOVATECH CONNECT\\INOVATECH CONNECT",
+  "analyzedAt": "2026-03-20T16:13:50.970Z",
+  "rootStructure": [
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "size": 14,
+      "lines": 2
+    },
+    {
+      "name": "blobs",
+      "type": "dir"
+    },
+    {
+      "name": "dist",
+      "type": "dir"
+    },
+    {
+      "name": "EXPORT_GUIDE.md",
+      "type": "file",
+      "size": 7519,
+      "lines": 259
+    },
+    {
+      "name": "GATEWAY_SETUP.md",
+      "type": "file",
+      "size": 5707,
+      "lines": 208
+    },
+    {
+      "name": "index.html",
+      "type": "file",
+      "size": 1116,
+      "lines": 28
+    },
+    {
+      "name": "INOVATECH_CONNECT",
+      "type": "dir"
+    },
+    {
+      "name": "manifests",
+      "type": "dir"
+    },
+    {
+      "name": "node_modules",
+      "type": "dir"
+    },
+    {
+      "name": "package-lock.json",
+      "type": "file",
+      "size": 202372,
+      "lines": 5757
+    },
+    {
+      "name": "package.json",
+      "type": "file",
+      "size": 1636,
+      "lines": 58
+    },
+    {
+      "name": "PAYMENT_GATEWAY_BEFORE_AFTER.md",
+      "type": "file",
+      "size": 15866,
+      "lines": 356
+    },
+    {
+      "name": "PAYMENT_GATEWAY_COMPLETE.md",
+      "type": "file",
+      "size": 8258,
+      "lines": 251
+    },
+    {
+      "name": "PAYMENT_GATEWAY_GUIDE.md",
+      "type": "file",
+      "size": 10669,
+      "lines": 354
+    },
+    {
+      "name": "PAYMENT_GATEWAY_QUICK_SUMMARY.md",
+      "type": "file",
+      "size": 5100,
+      "lines": 197
+    },
+    {
+      "name": "PAYMENT_GATEWAY_SUMMARY.md",
+      "type": "file",
+      "size": 8937,
+      "lines": 320
+    },
+    {
+      "name": "PAYMENT_GATEWAY_UI_LAYOUT.md",
+      "type": "file",
+      "size": 16799,
+      "lines": 368
+    },
+    {
+      "name": "PAYMENT_GATEWAY_UI_SUMMARY.md",
+      "type": "file",
+      "size": 10149,
+      "lines": 328
+    },
+    {
+      "name": "prisma",
+      "type": "dir"
+    },
+    {
+      "name": "public",
+      "type": "dir"
+    },
+    {
+      "name": "server",
+      "type": "dir"
+    },
+    {
+      "name": "src",
+      "type": "dir"
+    },
+    {
+      "name": "test-api-login.js",
+      "type": "file",
+      "size": 3242,
+      "lines": 95
+    },
+    {
+      "name": "test-gateways.js",
+      "type": "file",
+      "size": 4687,
+      "lines": 138
+    },
+    {
+      "name": "test-login.js",
+      "type": "file",
+      "size": 2005,
+      "lines": 66
+    },
+    {
+      "name": "test-ollama.js",
+      "type": "file",
+      "size": 493,
+      "lines": 19
+    },
+    {
+      "name": "test-payment-gateway.js",
+      "type": "file",
+      "size": 5896,
+      "lines": 151
+    },
+    {
+      "name": "test-webhook-handler.js",
+      "type": "file",
+      "size": 3462,
+      "lines": 120
+    },
+    {
+      "name": "TESTING_DEPLOYMENT_GUIDE.md",
+      "type": "file",
+      "size": 7019,
+      "lines": 312
+    },
+    {
+      "name": "TODO-USERS.md",
+      "type": "file",
+      "size": 403,
+      "lines": 14
+    },
+    {
+      "name": "TODO.md",
+      "type": "file",
+      "size": 1326,
+      "lines": 42
+    },
+    {
+      "name": "TODO_LOGIN_FIX.md",
+      "type": "file",
+      "size": 1457,
+      "lines": 46
+    },
+    {
+      "name": "tsconfig.json",
+      "type": "file",
+      "size": 727,
+      "lines": 33
+    },
+    {
+      "name": "tsconfig.node.json",
+      "type": "file",
+      "size": 232,
+      "lines": 11
+    },
+    {
+      "name": "Users",
+      "type": "dir"
+    },
+    {
+      "name": "vite.config.ts",
+      "type": "file",
+      "size": 669,
+      "lines": 28
+    }
+  ],
+  "rootFileSnippets": {
+    "EXPORT_GUIDE.md": [
+      "# 🚀 GUIA DE EXPORTAÇÃO — INOVATECH CONNECT",
+      "## Como transferir para outra plataforma",
+      "",
+      "---",
+      "",
+      "## 📁 ESTRUTURA COMPLETA DO PROJETO",
+      "",
+      "```",
+      "inovatech-connect/",
+      "├── index.html"
+    ],
+    "GATEWAY_SETUP.md": [
+      "# Configuração de Gateways de Pagamento - INOVATECH CONNECT",
+      "",
+      "Este documento explica como configurar os gateways de pagamento reais no sistema INOVATECH CONNECT.",
+      "",
+      "## 🏗️ Arquitetura Implementada",
+      "",
+      "O sistema agora possui integrações reais com:",
+      "- **Asaas** - Gateway líder no Brasil",
+      "- **Mercado Pago** - Maior fintech da América Latina",
+      "- **Stripe** - Gateway internacional"
+    ],
+    "index.html": [
+      "<!doctype html>",
+      "<html lang=\"pt-BR\">",
+      "<head>",
+      "<meta charset=\"UTF-8\" />",
+      "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\" />",
+      "<meta name=\"theme-color\" content=\"#08090c\" />",
+      "<meta name=\"description\" content=\"INOVATECH CONNECT — Plataforma inteligente de gestão de condomínios\" />",
+      "<meta name=\"apple-mobile-web-app-capable\" content=\"yes\" />",
+      "<meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black-translucent\" />",
+      "<meta name=\"apple-mobile-web-app-title\" content=\"INOVATECH\" />"
+    ],
+    "package-lock.json": [
+      "{",
+      "\"name\": \"inovatech-connect\",",
+      "\"version\": \"0.1.0\",",
+      "\"lockfileVersion\": 3,",
+      "\"requires\": true,",
+      "\"packages\": {",
+      "\"\": {",
+      "\"name\": \"inovatech-connect\",",
+      "\"version\": \"0.1.0\",",
+      "\"hasInstallScript\": true,"
+    ],
+    "package.json": [
+      "{",
+      "\"name\": \"inovatech-connect\",",
+      "\"private\": true,",
+      "\"version\": \"0.1.0\",",
+      "\"type\": \"module\",",
+      "\"scripts\": {",
+      "\"dev\": \"concurrently \\\"npm run dev:client\\\" \\\"npm run dev:server\\\"\",",
+      "\"dev:client\": \"vite\",",
+      "\"dev:server\": \"nodemon --watch server server/index.js\",",
+      "\"build\": \"tsc && vite build\","
+    ],
+    "PAYMENT_GATEWAY_BEFORE_AFTER.md": [
+      "# 🎨 PAYMENT GATEWAY UI - ANTES vs DEPOIS",
+      "",
+      "## 📊 COMPARATIVO VISUAL",
+      "",
+      "### ANTES ❌ (GatewayConfigSection complexo)",
+      "```",
+      "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+      "⚙️ GATEWAY CONFIGURATION (Muitas abas, confuso)",
+      "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+      ""
+    ],
+    "PAYMENT_GATEWAY_COMPLETE.md": [
+      "# 💳 GATEWAY PAYMENT IMPLEMENTATION - STATUS REPORT",
+      "",
+      "## ✅ CONCLUÍDO COM SUCESSO",
+      "",
+      "O gateway de pagamento do INOVATECH CONNECT está **100% funcional** e integrado com o banco de dados!",
+      "",
+      "---",
+      "",
+      "## 📋 O Que Foi Implementado",
+      ""
+    ],
+    "PAYMENT_GATEWAY_GUIDE.md": [
+      "# 💳 PAYMENT GATEWAY - DOCUMENTAÇÃO COMPLETA",
+      "",
+      "## 🎯 Status: ✅ Funcional e Integrado",
+      "",
+      "O gateway de pagamento está **totalmente funcional** e integrado com o banco de dados. Suporta múltiplos provedores de pagamento com autenticação, cobrança e rastreamento de webhooks.",
+      "",
+      "---",
+      "",
+      "## 📊 Arquitetura Implementada",
+      ""
+    ],
+    "PAYMENT_GATEWAY_QUICK_SUMMARY.md": [
+      "# ✅ PAYMENT GATEWAY UI - ENTREGA FINAL",
+      "",
+      "## O QUE VOCÊ PEDIU",
+      "\"Deixar layout da tela de gateway de pagamento com layout bonito e compacto mas funcional sem perder nenuma função\"",
+      "",
+      "## O QUE VOCÊ RECEBEU ✅",
+      "",
+      "### 1. Novo Componente React",
+      "📄 **src/PaymentGatewayUI.tsx** (550 linhas)",
+      "- Layout profissional"
+    ],
+    "PAYMENT_GATEWAY_SUMMARY.md": [
+      "# 🎉 INOVATECH CONNECT - PAYMENT GATEWAY IMPLEMENTATION COMPLETE",
+      "",
+      "## Summary of Implementation",
+      "",
+      "✅ **Status:** Payment gateway fully functional and database-integrated",
+      "📅 **Date:** March 19, 2025",
+      "🎯 **Goal:** Enable condominiums to process payments via multiple gateway providers",
+      "",
+      "---",
+      ""
+    ],
+    "PAYMENT_GATEWAY_UI_LAYOUT.md": [
+      "# 💳 PAYMENT GATEWAY UI - LAYOUT VISUAL E FUNCIONAL",
+      "",
+      "## 🎨 Design Overview",
+      "",
+      "Criei um layout **profissional, compacto e funcional** para o gateway de pagamento com:",
+      "- ✅ Design responsivo (mobile, tablet, desktop)",
+      "- ✅ Todas as funcionalidades mantidas",
+      "- ✅ Interface intuitiva com 4 abas principais",
+      "- ✅ Integração com backend (rotas 100% prontas)",
+      "- ✅ Real-time updates via webhooks"
+    ],
+    "PAYMENT_GATEWAY_UI_SUMMARY.md": [
+      "# 🎉 PAYMENT GATEWAY UI - RESUMO EXECUTIVO",
+      "",
+      "## O QUE FOI CRIADO",
+      "",
+      "Um **layout profissional, bonito e compacto** para gerenciar pagamentos com:",
+      "- ✅ 4 abas funccionais (Dashboard, Config, Nova Cobrança, Histórico)",
+      "- ✅ Design responsivo (mobile, tablet, desktop)",
+      "- ✅ Nenhuma função perdida (apenas UI melhorada)",
+      "- ✅ Totalmente integrado com backend",
+      "- ✅ Sem erros de compilação"
+    ],
+    "test-api-login.js": [
+      "const API_URL = 'http://localhost:3001';",
+      "",
+      "async function testLoginAPI() {",
+      "try {",
+      "console.log('🧪 Testando API de Login\\n');",
+      "",
+      "console.log('1️⃣ Testando health check...');",
+      "try {",
+      "const controller = new AbortController();",
+      "const timeout = setTimeout(() => controller.abort(), 5000);"
+    ],
+    "test-gateways.js": [
+      "import { createGatewayIntegration } from './server/gateway-integrations.js';",
+      "",
+      "// Script para testar integrações com gateways de pagamento",
+      "async function testGateways() {",
+      "console.log('🧪 Testando Integrações com Gateways de Pagamento\\n');",
+      "",
+      "// Teste com Asaas Sandbox",
+      "console.log('1️⃣ Testando Asaas (Sandbox)...');",
+      "try {",
+      "const asaas = createGatewayIntegration('asaas', 'sandbox_test_key', 'sandbox');"
+    ],
+    "test-login.js": [
+      "import { PrismaClient } from '@prisma/client';",
+      "import bcrypt from 'bcryptjs';",
+      "",
+      "const prisma = new PrismaClient();",
+      "",
+      "async function testLogin() {",
+      "try {",
+      "console.log('🧪 Testando Login...\\n');",
+      "",
+      "// Test 1: Verificar se usuário admin existe"
+    ],
+    "test-ollama.js": [
+      "const ollama = require('ollama');",
+      "",
+      "async function testOllama() {",
+      "try {",
+      "const response = await ollama.chat({",
+      "model: 'minimax-m2.7:cloud',",
+      "messages: [",
+      "{ role: 'user', content: 'Olá! Crie um exemplo de pagamento PIX para R$ 299,90 da INOVATECH CONNECT' }",
+      "],",
+      "});"
+    ],
+    "test-payment-gateway.js": [
+      "/**",
+      "* Test Payment Gateway Routes",
+      "* Testa as novas rotas de pagamento: POST /api/gateway/configs, POST /api/gateway/create-payment, webhooks",
+      "*/",
+      "",
+      "import http from 'http';",
+      "",
+      "function makeRequest(method, path, data = null, headers = {}) {",
+      "return new Promise((resolve, reject) => {",
+      "const options = {"
+    ],
+    "test-webhook-handler.js": [
+      "/**",
+      "* Webhook Handler Test",
+      "* Valida o processamento correto de webhooks do gateway",
+      "*/",
+      "",
+      "import http from 'http';",
+      "",
+      "function simulateWebhook(provider, payload) {",
+      "return new Promise((resolve, reject) => {",
+      "const options = {"
+    ],
+    "TESTING_DEPLOYMENT_GUIDE.md": [
+      "# 🧪 TESTING & DEPLOYMENT GUIDE",
+      "",
+      "## Quick Start - Teste Local em 5 Minutos",
+      "",
+      "### 1️⃣ Inicie o Servidor Backend",
+      "```bash",
+      "cd \"c:\\Users\\NITRO 5\\Downloads\\INOVATECH CONNECT\\INOVATECH CONNECT\"",
+      "PORT=3001 npm run dev:server",
+      "```",
+      ""
+    ],
+    "TODO-USERS.md": [
+      "# TODO: Banco Users Real (Prisma + Email/Senha)",
+      "",
+      "## Status: 0/6 ✅",
+      "",
+      "### Plano:",
+      "- [ ] **1. Instalar bcrypt** (`npm i bcryptjs`)",
+      "- [ ] **2. server/routes/users.js** (CRUD + hash senha)",
+      "- [ ] **3. prisma/seed.js** (seed users hashed)",
+      "- [ ] **4. server/index.js** (+ bcrypt + users routes)",
+      "- [ ] **5. npx prisma db seed**"
+    ],
+    "TODO.md": [
+      "so me# Plano de Implementação: Banco de Dados Funcional com Autenticação e Permissões",
+      "",
+      "## Status: Em andamento",
+      "",
+      "### 1. [✅] Criar middleware de autenticação (server/middleware/auth.js)",
+      "- JWT verify",
+      "- Anexar user ao req",
+      "- JWT verify",
+      "- Anexar user ao req",
+      ""
+    ],
+    "TODO_LOGIN_FIX.md": [
+      "# Fix Tela de Login - Não foi possível validar o login no servidor",
+      "",
+      "Status: ✅ **RESOLVIDO**",
+      "",
+      "## Problema Identificado",
+      "- Arquivo `prisma/seed.js` estava com erro de sintaxe",
+      "- Faltava o objeto completo do usuário admin na array de dados",
+      "- Linha 71 tinha: `data: [email: 'admin@inovatechconnect.com',` (incompleto)",
+      "",
+      "## Solução Aplicada"
+    ],
+    "tsconfig.json": [
+      "{",
+      "\"compilerOptions\": {",
+      "\"target\": \"ES2020\",",
+      "\"useDefineForClassFields\": true,",
+      "\"lib\": [\"ES2020\", \"DOM\", \"DOM.Iterable\"],",
+      "\"module\": \"ESNext\",",
+      "\"skipLibCheck\": true,",
+      "\"types\": [\"node\"],",
+      "",
+      "/* Bundler mode */"
+    ],
+    "tsconfig.node.json": [
+      "{",
+      "\"compilerOptions\": {",
+      "\"composite\": true,",
+      "\"skipLibCheck\": true,",
+      "\"module\": \"ESNext\",",
+      "\"moduleResolution\": \"bundler\",",
+      "\"allowSyntheticDefaultImports\": true,",
+      "\"strict\": true",
+      "},",
+      "\"include\": [\"vite.config.ts\"]"
+    ],
+    "vite.config.ts": [
+      "import path from \"path\";",
+      "import { fileURLToPath } from \"url\";",
+      "import tailwindcss from \"@tailwindcss/vite\";",
+      "import react from \"@vitejs/plugin-react\";",
+      "import { defineConfig } from \"vite\";",
+      "import { viteSingleFile } from \"vite-plugin-singlefile\";",
+      "",
+      "const __filename = fileURLToPath(import.meta.url);",
+      "const __dirname = path.dirname(__filename);",
+      ""
+    ]
+  },
+  "importantFolders": [
+    {
+      "path": "public",
+      "category": "assets",
+      "fileCount": 2,
+      "primaryLanguage": "JavaScript"
+    },
+    {
+      "path": "server",
+      "category": "backend",
+      "fileCount": 12,
+      "primaryLanguage": "JavaScript"
+    },
+    {
+      "path": "server\\routes",
+      "category": "build",
+      "fileCount": 6,
+      "primaryLanguage": "JavaScript"
+    },
+    {
+      "path": "src\\assets",
+      "category": "assets",
+      "fileCount": 0
+    },
+    {
+      "path": "src\\components",
+      "category": "frontend",
+      "fileCount": 0
+    },
+    {
+      "path": "Users\\NITRO 5\\Downloads\\INOVATECH CONNECT\\INOVATECH CONNECT\\server",
+      "category": "backend",
+      "fileCount": 1,
+      "primaryLanguage": "JavaScript"
+    },
+    {
+      "path": "Users\\NITRO 5\\Downloads\\INOVATECH CONNECT\\INOVATECH CONNECT\\server\\routes",
+      "category": "build",
+      "fileCount": 0
+    },
+    {
+      "path": "Users\\NITRO 5\\Downloads\\INOVATECH CONNECT\\INOVATECH CONNECT\\src\\components",
+      "category": "frontend",
+      "fileCount": 0
+    },
+    {
+      "path": "Users\\NITRO 5\\Downloads\\INOVATECH CONNECT\\INOVATECH CONNECT\\src\\services",
+      "category": "backend",
+      "fileCount": 0
+    }
+  ],
+  "readmeParagraphs": {},
+  "totals": {
+    "numFiles": 78,
+    "numDirs": 46,
+    "totalSizeBytes": 1722326,
+    "totalLinesOfCode": 24109
+  },
+  "fileCategories": {
+    "other": 8,
+    "documentation": 14,
+    "source": 48,
+    "config": 8
+  },
+  "linesOfCodePerLanguage": {
+    "JavaScript": 4382,
+    "TypeScript": 19727
+  },
+  "filesPerLanguage": {
+    "JavaScript": 23,
+    "TypeScript": 25
+  },
+  "projectTypes": [
+    "JavaScript/Node.js"
+  ],
+  "frameworks": [
+    "React",
+    "Vite"
+  ],
+  "entryPoints": [],
+  "ciCdTools": [],
+  "packageManagers": [
+    "npm/yarn"
+  ],
+  "topLevelDirectories": [
+    {
+      "name": "src",
+      "numFiles": 26,
+      "totalLoc": 20243,
+      "dominantLanguage": "TypeScript"
+    },
+    {
+      "name": "server",
+      "numFiles": 12,
+      "totalLoc": 1884,
+      "dominantLanguage": "JavaScript"
+    },
+    {
+      "name": "Users",
+      "numFiles": 2,
+      "totalLoc": 595,
+      "dominantLanguage": "JavaScript"
+    },
+    {
+      "name": "INOVATECH_CONNECT",
+      "numFiles": 1,
+      "totalLoc": 447,
+      "dominantLanguage": "JavaScript"
+    },
+    {
+      "name": "prisma",
+      "numFiles": 6,
+      "totalLoc": 262,
+      "dominantLanguage": "JavaScript"
+    },
+    {
+      "name": "public",
+      "numFiles": 2,
+      "totalLoc": 61,
+      "dominantLanguage": "JavaScript"
+    }
+  ],
+  "detailedDirectories": [
+    {
+      "path": "src",
+      "name": "src",
+      "level": 1,
+      "numFiles": 26,
+      "totalLoc": 20243,
+      "dominantLanguage": "TypeScript",
+      "category": "General",
+      "description": "General module with 26 files (TypeScript)",
+      "subdirectories": [
+        {
+          "path": "src\\pages",
+          "name": "pages",
+          "level": 2,
+          "numFiles": 1,
+          "totalLoc": 544,
+          "dominantLanguage": "JavaScript",
+          "category": "General",
+          "description": "General module with 1 files (JavaScript)",
+          "subdirectories": []
+        },
+        {
+          "path": "src\\utils",
+          "name": "utils",
+          "level": 2,
+          "numFiles": 1,
+          "totalLoc": 7,
+          "dominantLanguage": "TypeScript",
+          "category": "Tools/Scripts",
+          "description": "Tools/Scripts module with 1 files (TypeScript)",
+          "subdirectories": []
+        }
+      ]
+    },
+    {
+      "path": "server",
+      "name": "server",
+      "level": 1,
+      "numFiles": 12,
+      "totalLoc": 1884,
+      "dominantLanguage": "JavaScript",
+      "category": "General",
+      "description": "General module with 12 files (JavaScript)",
+      "subdirectories": [
+        {
+          "path": "server\\routes",
+          "name": "routes",
+          "level": 2,
+          "numFiles": 6,
+          "totalLoc": 1135,
+          "dominantLanguage": "JavaScript",
+          "category": "General",
+          "description": "General module with 6 files (JavaScript)",
+          "subdirectories": []
+        },
+        {
+          "path": "server\\middleware",
+          "name": "middleware",
+          "level": 2,
+          "numFiles": 1,
+          "totalLoc": 23,
+          "dominantLanguage": "JavaScript",
+          "category": "General",
+          "description": "General module with 1 files (JavaScript)",
+          "subdirectories": []
+        },
+        {
+          "path": "server\\data",
+          "name": "data",
+          "level": 2,
+          "numFiles": 1,
+          "totalLoc": 0,
+          "category": "Data",
+          "description": "Data module with 1 files",
+          "subdirectories": []
+        }
+      ]
+    },
+    {
+      "path": "Users",
+      "name": "Users",
+      "level": 1,
+      "numFiles": 2,
+      "totalLoc": 595,
+      "dominantLanguage": "JavaScript",
+      "category": "General",
+      "description": "General module with 2 files (JavaScript)",
+      "subdirectories": [
+        {
+          "path": "Users\\NITRO 5",
+          "name": "NITRO 5",
+          "level": 2,
+          "numFiles": 2,
+          "totalLoc": 595,
+          "dominantLanguage": "JavaScript",
+          "category": "General",
+          "description": "General module with 2 files (JavaScript)",
+          "subdirectories": [
+            {
+              "path": "Users\\NITRO 5\\Downloads",
+              "name": "Downloads",
+              "level": 3,
+              "numFiles": 2,
+              "totalLoc": 595,
+              "dominantLanguage": "JavaScript",
+              "category": "General",
+              "description": "General module with 2 files (JavaScript)",
+              "subdirectories": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "INOVATECH_CONNECT",
+      "name": "INOVATECH_CONNECT",
+      "level": 1,
+      "numFiles": 1,
+      "totalLoc": 447,
+      "dominantLanguage": "JavaScript",
+      "category": "General",
+      "description": "General module with 1 files (JavaScript)",
+      "subdirectories": [
+        {
+          "path": "INOVATECH_CONNECT\\src",
+          "name": "src",
+          "level": 2,
+          "numFiles": 1,
+          "totalLoc": 447,
+          "dominantLanguage": "JavaScript",
+          "category": "General",
+          "description": "General module with 1 files (JavaScript)",
+          "subdirectories": [
+            {
+              "path": "INOVATECH_CONNECT\\src\\pages",
+              "name": "pages",
+              "level": 3,
+              "numFiles": 1,
+              "totalLoc": 447,
+              "dominantLanguage": "JavaScript",
+              "category": "General",
+              "description": "General module with 1 files (JavaScript)",
+              "subdirectories": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "prisma",
+      "name": "prisma",
+      "level": 1,
+      "numFiles": 6,
+      "totalLoc": 262,
+      "dominantLanguage": "JavaScript",
+      "category": "General",
+      "description": "General module with 6 files (JavaScript)",
+      "subdirectories": [
+        {
+          "path": "prisma\\migrations",
+          "name": "migrations",
+          "level": 2,
+          "numFiles": 2,
+          "totalLoc": 0,
+          "category": "General",
+          "description": "General module with 2 files",
+          "subdirectories": [
+            {
+              "path": "prisma\\migrations\\20260319174050_inovatechconnect",
+              "name": "20260319174050_inovatechconnect",
+              "level": 3,
+              "numFiles": 1,
+              "totalLoc": 0,
+              "category": "General",
+              "description": "General module with 1 files",
+              "subdirectories": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "public",
+      "name": "public",
+      "level": 1,
+      "numFiles": 2,
+      "totalLoc": 61,
+      "dominantLanguage": "JavaScript",
+      "category": "General",
+      "description": "General module with 2 files (JavaScript)",
+      "subdirectories": []
+    }
+  ],
+  "architecturalInsights": {
+    "coreApplications": [],
+    "entryPointDetails": [],
+    "serviceArchitecture": {
+      "microservices": [],
+      "monoliths": [],
+      "libraries": []
+    },
+    "layeredArchitecture": {
+      "presentation": [],
+      "business": [],
+      "data": [],
+      "infrastructure": []
+    }
+  },
+  "largeFiles": [],
+  "dependencies": {
+    "production": [
+      "@anthropic-ai/sdk",
+      "@prisma/client",
+      "@types/cors",
+      "@types/express",
+      "@types/helmet",
+      "@types/qrcode",
+      "@types/react",
+      "@types/react-dom",
+      "bcryptjs",
+      "clsx",
+      "cors",
+      "express",
+      "helmet",
+      "idb",
+      "jsonwebtoken",
+      "jsqr",
+      "node-fetch",
+      "ollama",
+      "qrcode",
+      "react",
+      "react-dom",
+      "tailwind-merge"
+    ],
+    "development": [
+      "@eslint/js",
+      "@tailwindcss/vite",
+      "@types/node",
+      "@vitejs/plugin-react",
+      "concurrently",
+      "eslint",
+      "globals",
+      "nodemon",
+      "prisma",
+      "tailwindcss",
+      "typescript",
+      "vite",
+      "vite-plugin-singlefile"
+    ],
+    "total": 35
+  },
+  "complexity": {
+    "averageFileSize": 309.0897435897436,
+    "maxFileSize": 0,
+    "nestedDepth": 0,
+    "estimatedComplexity": "medium"
+  },
+  "gitRepo": {
+    "firstCommitDate": "2026-03-07",
+    "totalCommits": 1,
+    "numContributors": 0,
+    "currentBranch": "main",
+    "remoteUrls": []
+  }
+}

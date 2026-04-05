@@ -1,0 +1,11 @@
+﻿src/App.tsx(996,5): error TS2353: Object literal may only specify known properties, and 'indigo' does not exist in type 'Record<ThemeId, string>'.
+src/App.tsx(1006,26): error TS2367: This comparison appears to be unintentional because the types 'ThemeId' and '"arctic"' have no overlap.
+src/App.tsx(1006,51): error TS2367: This comparison appears to be unintentional because the types 'ThemeId' and '"snow"' have no overlap.
+src/App.tsx(1007,27): error TS2367: This comparison appears to be unintentional because the types 'ThemeId' and '"midnight"' have no overlap.
+src/App.tsx(1021,7): error TS2367: This comparison appears to be unintentional because the types 'ThemeId' and '"snow"' have no overlap.
+src/App.tsx(1248,5): error TS2353: Object literal may only specify known properties, and 'indigo' does not exist in type 'Record<ThemeId, { surface: string; border: string; title: string; subtitle: string; buttonBg: string; buttonText: string; popoverSurface: string; popoverBorder: string; chipBorder: string; }>'.
+src/App.tsx(1511,16): error TS2304: Cannot find name 'ThemeSelector'.
+src/App.tsx(4390,18): error TS2367: This comparison appears to be unintentional because the types 'ThemeId' and '"gold"' have no overlap.
+src/App.tsx(4390,41): error TS2367: This comparison appears to be unintentional because the types 'ThemeId' and '"rose"' have no overlap.
+src/App.tsx(4390,64): error TS2367: This comparison appears to be unintentional because the types 'ThemeId' and '"arctic"' have no overlap.
+src/AssemblySection.tsx(244,23): error TS2367: This comparison appears to be unintentional because the types 'ThemeId' and '"gold"' have no overlap.

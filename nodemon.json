@@ -1,0 +1,13 @@
+{
+  "watch": ["server"],
+  "ignore": [
+    "server/data/*",
+    "server/data/**",
+    "server\\data\\*",
+    "server\\data\\**",
+    "server/data/state.json",
+    "prisma/dev.db",
+    "prisma/dev.db-journal"
+  ],
+  "ext": "js,mjs,cjs"
+}
